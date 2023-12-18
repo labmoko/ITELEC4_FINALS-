@@ -15,9 +15,13 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <p>Welcome, {{ $name }}</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+    
 @endsection

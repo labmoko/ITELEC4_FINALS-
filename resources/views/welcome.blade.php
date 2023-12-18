@@ -3,6 +3,6 @@
 @section('content')
 
 
-    home
+    
 
 @endsection

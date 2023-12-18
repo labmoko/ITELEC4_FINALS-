@@ -45,21 +45,20 @@ class ProductController extends Controller
             'price' => 'required',
             'quantity' => 'required',
             'status' => 'required',
-
         ]);
     
         $prod = new Product;
-        // Product::create($request->all());
-        
+    
         $prod->name = $request->name;
         $prod->brand = $request->brand;
         $prod->img = $request->img;
         $prod->price = $request->price;
         $prod->quantity = $request->quantity;
         $prod->status = $request->status;
-
+        $prod->user_id = auth()->id(); 
+        
         $prod->save();
-
+    
         return redirect()->route('products.index')
                         ->with('success','Product created successfully.');
     }
