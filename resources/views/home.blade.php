@@ -16,12 +16,20 @@
 
                     {{ __('You are logged in!') }}
                     <p>Welcome, {{ $name }}</p>
+
+                    <h3>Additional Functions:</h3>
+                    <ul>
+                        <li><a href="{{ route('products.index') }}">View Products</a></li>
+                        <li><a href="{{ route('products.create') }}">Add a Product</a></li>
+                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                    </ul>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
-    
 @endsection
