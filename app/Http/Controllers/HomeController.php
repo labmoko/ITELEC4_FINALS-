@@ -23,8 +23,14 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-{
-    $name = Auth::user()->name;
-    return view('home', ['name' => $name]);
-}
+    {
+        $name = Auth::user()->name;
+        return view('home', ['name' => $name]);
+    }
+
+    public function checkout()
+    {
+        $product = Product::find(session('checked_out_product'));
+        return view('home.checkout', compact('product'));
+    }
 }

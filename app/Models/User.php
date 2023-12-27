@@ -30,4 +30,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Product::class);
     }
+    public function savedProducts()
+    {
+        return $this->belongsToMany(Product::class);
+    }
 }

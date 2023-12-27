@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
    
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
   
 class ProductController extends Controller
 {
@@ -122,6 +123,13 @@ class ProductController extends Controller
         return redirect()->route('products.index')
                         ->with('success','Product deleted successfully');
     }
+
+
+    public function saveProduct(Product $product)
+{
+    Auth::user()->savedProducts()->syncWithoutDetaching([$product->id]);
+    return back();
+}
 }
 
 

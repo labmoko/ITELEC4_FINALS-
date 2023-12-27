@@ -19,4 +19,9 @@ class Product extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function savedByUsers()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
 }

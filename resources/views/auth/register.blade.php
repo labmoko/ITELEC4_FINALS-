@@ -13,7 +13,7 @@
         <h3>Register User</h3><br>
         <form method="POST" action="{{ route('register') }}">
           @csrf
-
+a
           <!-- Name input -->
           <div class="form-outline mb-4">
             <input type="text" id="name" name="name" class="form-control form-control-lg @error('name') is-invalid @enderror"

@@ -17,6 +17,8 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function() {
 
 Route::resource('posts', PostController::class)->middleware('auth');
 Route::resource('products', ProductController::class);
+Route::post('/products/{product}/save', [App\Http\Controllers\ProductController::class, 'saveProduct'])->name('products.save');
+Route::get('/saved-products', [App\Http\Controllers\UserController::class, 'savedProducts'])->name('user.savedProducts');
 
 Auth::routes();
 
